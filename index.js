@@ -1,6 +1,5 @@
 // file path = https://riadadel.github.io/pbi-fullscreen/index.js
 (function to_fullscreen_embedded() {
-  console.log("Hello world");
   let url = new URL(location.href);
   const is_pbi_report = url.pathname.includes("/powerbi/");
   const is_fullscreen =
