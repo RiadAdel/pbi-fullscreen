@@ -9,5 +9,6 @@
   if (!is_pbi_report || is_fullscreen) return;
   url.searchParams.set("rs:Command", "Render");
   url.searchParams.set("rc:Toolbar", "false");
+  url.searchParams.delete("rs:embed");
   location.href = url;
 })();
