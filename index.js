@@ -3,9 +3,11 @@
   let url = new URL(location.href);
   const is_pbi_report = url.pathname.includes("/powerbi/");
   const is_fullscreen =
-    url.searchParams.get("rs:embed") &&
-    url.searchParams.get("rs:embed").toLowerCase() == "True".toLowerCase();
+    url.searchParams.get("rs:Command") &&
+    url.searchParams.get("rc:Toolbar") &&
+    url.searchParams.get("rc:Toolbar").toLowerCase() == "false".toLowerCase();
   if (!is_pbi_report || is_fullscreen) return;
-  url.searchParams.set("rs:embed", "True");
+  url.searchParams.set("rs:Command", "Render");
+  url.searchParams.set("rc:Toolbar", "false");
   location.href = url;
 })();
